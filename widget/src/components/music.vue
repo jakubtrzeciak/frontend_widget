@@ -57,11 +57,11 @@ export default {
     nextMusic () {
       const length = localStorage.getItem('lsInfosLength')
       let id
-      if (localStorage.getItem('lsId') != null) id = parseInt(localStorage.getItem('lsId'))
-      else id = 0
-
-      if (id + 1 >= length) id = 0
-      else id = id + 1
+      if (localStorage.getItem('lsId') != null) {
+        id = parseInt(localStorage.getItem('lsId'))
+        if (id + 1 >= length) id = 0
+        else id = id + 1
+      } else id = 0
 
       localStorage.setItem('lsId', id)
 
@@ -70,11 +70,11 @@ export default {
     prevMusic () {
       const length = localStorage.getItem('lsInfosLength')
       let id
-      if (localStorage.getItem('lsId') != null) id = parseInt(localStorage.getItem('lsId'))
-      else id = 0
-
-      if (id - 1 < 0) id = length - 1
-      else id = id - 1
+      if (localStorage.getItem('lsId') != null) {
+        id = parseInt(localStorage.getItem('lsId'))
+        if (id - 1 < 0) id = length - 1
+        else id = id - 1
+      } else id = 0
 
       localStorage.setItem('lsId', id)
 
